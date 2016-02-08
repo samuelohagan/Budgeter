@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   devise_scope :user do
     get 'register' => 'devise/registrations#new'
-     get 'login' => 'devise/sessions#new'
   end
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
