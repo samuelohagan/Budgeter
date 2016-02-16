@@ -1,0 +1,27 @@
+<% provide(:title, "New") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<h1>Create a new Budget</h1>
+  	<%= form_for(@budgetinput) do |f| %>
+  		<%= f.label "I live in" %>
+  		<%= f.select :city, [['Los Angeles',1],['New York', 2],['San Francisco', 3],['Chicago', 4],['Houstan', 5]] %><br />
+  		<%= f.label "Do you commute to work by car?" %>
+    	<%= f.check_box :car %> <br />
+
+    	<%= f.label "Do you own a house" %>
+    	<%= f.check_box :house %> <br />
+
+    	<%= f.label "Do you have kids" %>
+    	<%= f.check_box :kids %> <br />
+
+    	<%= f.label :age %>
+    	<%= f.text_field :age %> <br />
+
+    	<%= f.label "How much money do you make (before taxes)" %>
+    	<%= f.text_field :income %> <br />
+
+    	<%= f.submit "Submit", class: "btn btn-primary" %>
+
+  	<% end %>
+  </div>
+ </div>

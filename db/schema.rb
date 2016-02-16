@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205212422) do
+ActiveRecord::Schema.define(version: 20160209001854) do
+
+  create_table "budgetinputs", force: :cascade do |t|
+    t.integer  "city"
+    t.boolean  "car"
+    t.boolean  "house"
+    t.boolean  "kids"
+    t.integer  "age"
+    t.float    "income"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "budgetinputs", ["user_id"], name: "index_budgetinputs_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

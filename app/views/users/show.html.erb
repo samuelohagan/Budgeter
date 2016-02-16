@@ -1,1 +1,17 @@
-<%= @user.id %>, <%= @user.email %>
+<% if @user.budgetinputs.length == 0  %>
+	<div class="center jumbotron">
+		<h2>Create a new Budget</h2>
+		<%= link_to "New Budget", createbudget_path, class: "btn btn-primary btn-large" %>
+	</div>
+<% else %>
+	<div class="center jumbotron">
+		<h2>Create a new Budget</h2>
+		<%= link_to "New Budget", createbudget_path, class: "btn btn-primary btn-large" %>
+	</div>
+
+	<div class="container">
+		<%= render @budgetinputs %>
+	</div>
+
+	
+<% end %>

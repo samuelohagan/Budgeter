@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
+  get 'createbudget' => 'users#createbudget'
   resources :users
+  resources :budgetinputs,          only: [:create, :destroy]
 
 
 
